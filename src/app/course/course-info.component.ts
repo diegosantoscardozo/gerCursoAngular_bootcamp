@@ -15,11 +15,17 @@ export class CourseInfoComponent implements OnInit{
     
     ngOnInit(): void {
         //throw new Error("Method not implemented.");
-        this.course = this.service.retrieveById( Number(this.route.snapshot.paramMap.get('id')));    
+        this.service.retrieveById( Number(this.route.snapshot.paramMap.get('id'))).subscribe({
+            next: course => this.course = course,
+            error: err => console.log("Error:", err)
+        });    
     }
 
-    save(): void{
-        this.service.save(this.course);
+    save(): void {
+        this.service.save(this.course).subscribe({
+            next: course => console.log('Saved with success', course),
+            error: err => console.log('Error', err)
+        });
     }
 
 }

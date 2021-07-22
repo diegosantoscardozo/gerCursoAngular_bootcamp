@@ -2,7 +2,10 @@
 
 Projeto Gerenciador de cursos. (Curso básico de Angular)
 
-Pasta 'src/assets/server' - dá 'npm install'
+
+Pasta 'SERVER' ('src/assets/server')
+1) npm install
+2) node serve.js
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
