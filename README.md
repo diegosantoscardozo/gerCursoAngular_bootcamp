@@ -2,6 +2,8 @@
 
 Projeto Gerenciador de cursos. (Curso básico de Angular)
 
+Pasta 'src/assets/server' - dá 'npm install'
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
 
