@@ -9,7 +9,7 @@ export class StarComponent implements OnChanges{
     @Input()
     rating: number = 0;
 
-    starWidth: number;
+    starWidth!: number;
 
     ngOnChanges(changes: SimpleChanges): void {
         //throw new Error("Method not implemented.");
