@@ -14,7 +14,7 @@ export class CourseListComponent implements OnInit{
     _filtro!: string;
     filteredCourses: Course[] = [];
 
-    constructor(private courseService: CourseService){
+    constructor(private service: CourseService){
 
     }
     
@@ -25,12 +25,22 @@ export class CourseListComponent implements OnInit{
     }
     
     retrieveAll(): void{
-        this.courseService.retrieveAll().subscribe({
+        this.service.retrieveAll().subscribe({
             next: courses => {
                 this._courses = courses;
                 this.filteredCourses = this._courses;  // FOI COLOCADO P DENTRO DO 'NEXT' POIS É ASSINCRONO
             },
             error: err => console.log('Error: ', err) 
+        })
+    }
+
+    deleteById(idParam:number): void{
+       this.service.deleteById(idParam).subscribe({
+           next: () => {
+               console.log("Deleted with success");
+               this.retrieveAll();
+           },
+           error: err => console.log('Error ao deletar id ',err)
         })
     }
 
